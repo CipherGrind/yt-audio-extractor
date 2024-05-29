@@ -16,7 +16,7 @@ document.getElementById('extractorForm').addEventListener('submit', function(e) 
         .then(data => {
             if (data.success) {
                 messageElement.style.color = 'green';
-                messageElement.innerHTML = `Audio extracted successfully! <a href="${data.downloadLink}" target="_blank">Click here to listen</a>`;
+                messageElement.innerHTML = `Audio extracted successfully!<br><br><a href="${data.downloadLink}" target="_blank">Click here to listen</a>`;
             } else {
                 messageElement.style.color = 'red';
                 messageElement.textContent = 'Error: ' + data.message;
