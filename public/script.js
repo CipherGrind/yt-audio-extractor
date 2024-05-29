@@ -16,7 +16,7 @@ document.getElementById('extractorForm').addEventListener('submit', function(e) 
         .then(data => {
             if (data.success) {
                 messageElement.style.color = 'green';
-                messageElement.textContent = 'Audio extracted successfully! Download link: ' + data.downloadLink;
+                messageElement.innerHTML = `Audio extracted successfully! <a href="${data.downloadLink}" target="_blank">Click here to listen</a>`;
             } else {
                 messageElement.style.color = 'red';
                 messageElement.textContent = 'Error: ' + data.message;
@@ -32,3 +32,8 @@ document.getElementById('extractorForm').addEventListener('submit', function(e) 
 });
 
 
+function clearForm() {
+    document.getElementById('extractorForm').reset();
+    document.getElementById('message').innerHTML = '';
+    document.getElementById('audioContainer').innerHTML = '';
+}
